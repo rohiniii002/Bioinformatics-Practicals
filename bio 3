@@ -22,6 +22,7 @@ weight = len(protein) * 110
 print("\nApproximate Molecular Weight:",
       weight, "Daltons")
 
+#sample sequence:MVLSPADKTNVKAAWGKVGAHAGEYGAEALE
 
 
 # Practical 3: Protein Structure Prediction
