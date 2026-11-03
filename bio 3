@@ -1,0 +1,141 @@
+
+# Protein Sequence Analysis
+
+protein = input("Enter Protein Sequence: ").upper()
+
+print("\nProtein Length:", len(protein))
+
+# Amino Acid Count
+print("\nAmino Acid Count\n")
+
+amino = "ACDEFGHIKLMNPQRSTVWY"
+
+for aa in amino:
+    count = protein.count(aa)
+
+    if count > 0:
+        print(aa, ":", count)
+
+# Approximate Molecular Weight
+weight = len(protein) * 110
+
+print("\nApproximate Molecular Weight:",
+      weight, "Daltons")
+
+
+
+# Practical 3: Protein Structure Prediction
+
+## 1. Title
+Protein Structure Prediction Using Sequence Analysis and SWISS-MODEL
+
+## 2. Aim
+To analyze a given protein sequence using Python and predict its three-dimensional structure using the SWISS-MODEL online server.
+
+## 3. Objectives
+- Understand protein sequences and amino acids.
+- Analyze a protein sequence using Python.
+- Calculate protein sequence length.
+- Count the occurrence of amino acids.
+- Estimate approximate molecular weight.
+- Understand homology modeling.
+- Predict the 3D protein structure using SWISS-MODEL.
+
+## 4. Introduction
+Proteins are biological molecules made up of amino acids. They perform important functions in living organisms.
+
+There are 20 standard amino acids. Their sequence determines the structure of a protein, and its structure is closely related to its biological function.
+
+## 5. Four Levels of Protein Structure
+
+1. **Primary Structure:** Linear sequence of amino acids.
+2. **Secondary Structure:** Local structures such as alpha-helices and beta-sheets.
+3. **Tertiary Structure:** Overall three-dimensional structure of a single polypeptide chain.
+4. **Quaternary Structure:** Arrangement of multiple protein subunits.
+
+## 6. Protein Structure Prediction
+Protein structure prediction is the process of determining the three-dimensional structure of a protein from its amino acid sequence.
+
+## 7. Homology Modeling
+Homology modeling is a method used to predict a protein structure using a related protein with a known structure as a template.
+
+## 8. SWISS-MODEL
+SWISS-MODEL is an online platform used for automated protein structure homology modeling. It identifies suitable templates and generates a predicted protein structure.
+
+Website: https://swissmodel.expasy.org/
+
+## 9. Approximate Molecular Weight
+The approximate molecular weight is calculated using:
+
+Approximate Molecular Weight = Number of Amino Acids × 110 Da
+
+Da means Dalton, a unit of molecular mass.
+
+## 10. Software Requirements
+- Python 3.x
+- Jupyter Notebook / Google Colab
+- Web browser
+- SWISS-MODEL online server
+
+## 11. Algorithm
+1. Start the program.
+2. Enter the protein amino acid sequence.
+3. Convert the sequence to uppercase.
+4. Calculate the protein sequence length.
+5. Count each standard amino acid.
+6. Estimate approximate molecular weight.
+7. Display the sequence analysis results.
+8. Open the SWISS-MODEL website.
+9. Submit the protein sequence.
+10. Select or generate an appropriate model.
+11. Observe the predicted three-dimensional structure.
+12. Record the model information and observations.
+13. Stop the program.
+
+## 12. Sample Protein Sequence
+
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALE
+
+Expected sequence length: 33 amino acids.
+
+Approximate molecular weight: 3630 Daltons.
+
+## 13. Procedure for SWISS-MODEL
+1. Obtain a protein amino acid sequence.
+2. Open the SWISS-MODEL website.
+3. Select the appropriate modeling option.
+4. Paste or upload the protein sequence.
+5. Submit the sequence.
+6. Allow the server to identify suitable templates and generate a model.
+7. Observe the predicted 3D structure.
+8. Examine available model-quality information.
+9. Record the results.
+10. Include a screenshot of the predicted structure in the practical report.
+
+## 14. Applications
+1. Drug discovery.
+2. Protein function prediction.
+3. Structural biology.
+4. Disease research.
+5. Vaccine development.
+6. Protein engineering.
+7. Functional annotation.
+
+## 15. Advantages
+1. Easy to perform.
+2. Combines programming with a practical bioinformatics tool.
+3. Introduces structural bioinformatics.
+4. SWISS-MODEL provides an accessible approach to homology modeling.
+5. Suitable for introductory protein-structure analysis.
+
+## 16. Limitations
+1. Predicted structures may contain errors.
+2. Model quality depends on suitable templates.
+3. Approximate molecular weight is not an exact biochemical calculation.
+4. Computational predictions may require experimental validation.
+
+## 17. Result
+The protein sequence was successfully analyzed using Python. Its length, amino acid composition, and approximate molecular weight were determined. The sequence was then submitted to SWISS-MODEL for three-dimensional structure prediction.
+
+## 18. Conclusion
+This practical demonstrates protein sequence analysis using Python and three-dimensional protein structure prediction using the SWISS-MODEL server.
