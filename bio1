@@ -59,3 +59,69 @@ for base in reverse:
         complement += "G"
 
 print("Reverse Complement:", complement)
+
+
+
+
+3. Important external viva questions with simple answers
+Questions from your lab manual
+1. What is DNA? Explain its structure and functions.
+- DNA stands for Deoxyribonucleic Acid.
+- It is the genetic material present in living organisms.
+- It consists of four bases: Adenine, Thymine, Guanine and Cytosine.
+- It stores and transfers genetic information.
+2. What is GC content? How is it calculated and why is it important?
+- GC content is the percentage of G and C bases in DNA.
+- It is calculated by dividing the total number of G and C bases by the total sequence length and multiplying by 100.
+- It helps study DNA composition and sequence stability.
+3. What is a DNA motif?
+- A DNA motif is a short, specific nucleotide pattern.
+- It may have biological importance.
+- It can represent regulatory regions or binding sites.
+4. What are start and stop codons?
+- A start codon indicates the beginning of a protein-coding region.
+- ATG is the most common start codon.
+- TAA, TAG and TGA are stop codons.
+- Stop codons indicate the end of a coding region.
+5. What is reverse complement DNA?
+- Reverse complement is a DNA sequence obtained by first replacing each base with its complementary base and then reversing the sequence.
+- A pairs with T, and G pairs with C.
+CMPL-II Bioinformatics, UI,UX Design Lab Mnual.pdf
+4. Additional questions an external examiner may ask
+Question	Simple answer
+What is bioinformatics?	Application of computer science and biology to analyze biological data.
+What is a nucleotide?	The basic building block of DNA and RNA.
+What is a genome?	The complete genetic material of an organism.
+What is a DNA sequence?	An arrangement of A, T, G and C bases.
+What is a codon?	A sequence of three nucleotides.
+What is a gene?	A DNA segment that carries information to produce a functional product.
+What is Python?	A high-level programming language.
+What is Jupyter Notebook?	An interactive environment for writing and running Python code.
+What is GC percentage?	The percentage of G and C bases in a DNA sequence.
+What is the difference between DNA and RNA?	DNA generally contains thymine, while RNA contains uracil instead.
+
+5. Important Python concepts to understand
+Python concept	Purpose in this practical
+input()	Accepts DNA sequence from the user
+upper()	Converts sequence into uppercase
+len()	Calculates sequence length
+count()	Counts G and C bases
+find()	Searches for a codon
+for loop	Checks each base or codon
+if-elif-else	Checks conditions
+append()	Adds motif positions to a list
+[::-1]	Reverses the sequence
+
+6. Important sample values to remember
+For the sample sequence:
+
+ATGGCGATCGATCGATCGTAGCGCGCTAA
+- Sequence length: 31
+- GC content: 54.84%
+- Motif: GCG
+- Motif positions: 3, 21, 23
+- Start codon: ATG
+- Stop codons: TAA, TAG, TGA
+Positions in the Python program start from index 0.
+
+
