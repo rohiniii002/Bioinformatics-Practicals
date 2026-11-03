@@ -61,6 +61,30 @@ for base in reverse:
 print("Reverse Complement:", complement)
 
 
+#output
+Enter Protein Sequence:  MVLSPADKTNVKAAWGKVGAHAGEYGAEALE
+
+Protein Length: 31
+
+Amino Acid Count
+
+A : 7
+D : 1
+E : 3
+G : 4
+H : 1
+K : 3
+L : 2
+M : 1
+N : 1
+P : 1
+S : 1
+T : 1
+V : 3
+W : 1
+Y : 1
+
+Approximate Molecular Weight: 3410 Daltons
 
 
 3. Important external viva questions with simple answers
