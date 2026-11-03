@@ -1,0 +1,230 @@
+!pip install pandas
+
+
+
+import pandas as pd
+
+# Read Dataset
+data = pd.read_csv("rna_seq.csv")
+
+print("RNA-Seq Dataset\n")
+print(data)
+
+# Calculate Fold Change
+data["Fold Change"] = data["Treated"] / data["Control"]
+
+status = []
+
+for fc in data["Fold Change"]:
+    if fc >= 2:
+        status.append("Upregulated")
+    elif fc <= 0.5:
+        status.append("Downregulated")
+    else:
+        status.append("No Significant Change")
+
+data["Status"] = status
+
+print("\nDifferential Gene Expression\n")
+print(data)
+
+
+#output
+RNA-Seq Dataset
+
+    Gene  Control  Treated
+0  Gene1       50      120
+1  Gene2       80       60
+2  Gene3      100      250
+3  Gene4      150      140
+4  Gene5       60      180
+5  Gene6      200      100
+
+Differential Gene Expression
+
+    Gene  Control  Treated  Fold Change                 Status
+0  Gene1       50      120     2.400000            Upregulated
+1  Gene2       80       60     0.750000  No Significant Change
+2  Gene3      100      250     2.500000            Upregulated
+3  Gene4      150      140     0.933333  No Significant Change
+4  Gene5       60      180     3.000000            Upregulated
+5  Gene6      200      100     0.500000          Downregulated
+
+
+#rna_seq.csv.
+Gene,Control,Treated
+Gene1,50,120
+Gene2,80,60
+Gene3,100,250
+Gene4,150,140
+Gene5,60,180
+Gene6,200,100
+
+
+# Practical 2: RNA-Seq Data Analysis Using Python
+
+External Viva Preparation + Practical Writing Notes
+
+Below are the important points you should understand for your external viva and write in your practical notebook. These cover the basic concepts an examiner may ask you to explain.
+
+## 1. Aim
+
+To analyze a small RNA-Seq gene-expression dataset and identify differentially expressed genes between control and treated conditions using Python.
+
+## 2. Basic concepts
+
+1\. RNA-Seq (RNA Sequencing)
+
+- RNA-Seq stands for RNA Sequencing.
+- It is a high-throughput sequencing technique.
+- It is used to study RNA molecules and gene-expression patterns.
+- It helps identify which genes are active in a cell.
+
+2\. Gene Expression
+
+- Gene expression is the process by which information from a gene is used to produce a functional product, such as RNA or protein.
+- It helps us understand the activity of genes.
+
+3\. Control and Treated Samples
+
+- Control sample represents the normal or untreated condition used for comparison.
+- Treated sample represents the condition after a particular treatment.
+- Comparing them helps identify changes in gene expression.
+
+4\. Differential Gene Expression (DGE)
+
+- DGE means Differential Gene Expression.
+- It compares gene-expression levels between two or more conditions.
+- It helps identify genes whose expression increases or decreases.
+
+5\. Fold Change
+
+- Fold change measures the relative difference in gene expression between control and treated conditions.
+- It helps identify changes in gene activity.
+
+\\[ \text{Fold Change}=\frac{\text{Treated Expression}}{\text{Control Expression}} \\]
+
+6\. Types of Gene Expression
+
+| Type                  | Meaning                                          |
+| --------------------- | ------------------------------------------------ |
+| Upregulated           | Gene expression increases                        |
+| Downregulated         | Gene expression decreases                        |
+| No significant change | Expression does not cross the selected threshold |
+
+7\. Pandas Library
+
+- Pandas is a Python library used for data analysis.
+- It is used to read and handle CSV files.
+- It organizes data in rows and columns.
+- It helps perform calculations on datasets.
+
+8\. CSV File
+
+- CSV stands for Comma-Separated Values.
+- It is used to store tabular data.
+- It can be opened using Excel, Python, or other spreadsheet software.
+
+## 3. Important thresholds used in this practical
+
+Remember these three values:
+
+| Fold Change                | Classification        |
+| -------------------------- | --------------------- |
+| Greater than or equal to 2 | Upregulated           |
+| Less than or equal to 0.5  | Downregulated         |
+| Between 0.5 and 2          | No significant change |
+
+These are simplified educational thresholds used in this practical.
+
+## 4. Working procedure
+
+1. Start the Jupyter Notebook.
+2. Import the Pandas library.
+3. Load the RNA-Seq dataset.
+4. Display the dataset.
+5. Calculate fold change for each gene.
+6. Compare fold-change values with predefined thresholds.
+7. Classify genes into three categories.
+8. Add the classification to the dataset.
+9. Display the final analysis.
+
+## 5. Applications of RNA-Seq
+
+1. Gene-expression analysis.
+2. Cancer research.
+3. Disease research.
+4. Biomarker discovery.
+5. Functional genomics.
+6. Drug-target identification.
+
+## 6. Advantages
+
+1. Helps study gene-expression patterns.
+2. Makes comparison between conditions easier.
+3. Python and Pandas simplify data analysis.
+4. Suitable for analyzing biological datasets.
+5. Useful in medical and biological research.
+
+## 7. Limitations
+
+1. The practical uses a small dataset.
+2. Statistical significance is not calculated.
+3. Biological replicates are not included.
+4. Real RNA-Seq analysis requires normalization and statistical methods such as DESeq2 or edgeR.
+
+## 8. Important external viva topics
+
+Make sure you can explain these topics in your own words:
+
+- Difference between DNA and RNA.
+- Difference between RNA-Seq and DNA sequencing.
+- What is gene expression?
+- What is differential gene expression?
+- What is fold change?
+- Difference between upregulated and downregulated genes.
+- What is Pandas?
+- What is a CSV file?
+- What are NCBI, GEO and other biological databases?
+- Why are biological databases important in bioinformatics?
+- Why do we compare control and treated samples?
+- Why is normalization required in real RNA-Seq analysis?
+
+## 9. Important biological databases
+
+| Database | Purpose                                                 |
+| -------- | ------------------------------------------------------- |
+| NCBI     | Stores biological information, genes and sequences      |
+| GEO      | Stores gene-expression and functional genomics datasets |
+| UniProt  | Provides protein sequence and functional information    |
+| Ensembl  | Provides genome and gene-related information            |
+
+## 10. Conclusion
+
+RNA-Seq analysis helps study gene-expression patterns under different conditions. In this practical, Python and Pandas are used to compare control and treated gene-expression values. Fold change is calculated, and genes are classified as upregulated, downregulated, or showing no significant change.
+
+
+
+Study these first
+
+
+
+If you have limited preparation time, focus especially on:
+
+1. RNA-Seq
+2. Gene expression
+3. DGE
+4. Fold change formula
+5. Upregulated and downregulated genes
+6. Pandas library
+7. NCBI and GEO databases
+8. Limitations of this practical
+
+These are the core concepts of Practical 2 from your lab manual.&#x20;
+
+CMPL-II Bioinformatics, UI,UX Design Lab Mnual.pdf
+
+
+
+
+
