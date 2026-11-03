@@ -1,0 +1,129 @@
+!pip install pandas scikit-learn
+
+
+import pandas as pd
+
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+# Read Dataset
+data = pd.read_csv("genomic_data.csv")
+
+print("Genomic Dataset\n")
+print(data)
+
+# Features
+X = data[["GeneFeature1", "GeneFeature2"]]
+
+# Target
+y = data["Class"]
+
+# Split Dataset
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=1, stratify=y
+)
+
+# Create Model
+model = RandomForestClassifier(
+    n_estimators=100,
+    random_state=1
+)
+
+# Train Model
+model.fit(X_train, y_train)
+
+# Prediction
+prediction = model.predict(X_test)
+
+print("\nActual Class")
+print(y_test.values)
+
+print("\nPredicted Class")
+print(prediction)
+
+# Accuracy
+accuracy = accuracy_score(y_test, prediction)
+
+print("\nAccuracy:", round(accuracy * 100, 2), "%")
+
+#genomic_data.csv
+GeneFeature1,GeneFeature2,Class
+2.5,3.0,Healthy
+1.2,0.8,Disease
+3.1,3.5,Healthy
+0.9,1.1,Disease
+2.8,2.9,Healthy
+1.0,0.7,Disease
+3.2,3.8,Healthy
+0.8,1.0,Disease
+2.9,3.1,Healthy
+1.1,0.9,Disease
+
+
+
+3. Important external viva questions with simple answers
+These are the five questions given in your lab manual, followed by additional likely questions for preparation.
+Questions from your lab manual
+1. What is Machine Learning? Explain its applications in bioinformatics.
+- Machine Learning is a branch of AI.
+- It allows computers to learn patterns from data.
+- In bioinformatics, it is used for disease prediction, gene classification, and genomic data analysis.
+2. What is genomic data?
+- Genomic data is biological information related to genes and genomes.
+- It contains information about genetic sequences and features.
+- It is used to study organisms and diseases.
+3. What is classification?
+- Classification is a supervised machine learning technique.
+- It assigns data into predefined categories.
+- In this practical, the categories are Healthy and Disease.
+4. What is Random Forest? Explain its working and advantages.
+- Random Forest is a supervised machine learning algorithm.
+- It uses multiple decision trees.
+- Each tree makes a prediction.
+- The final result is decided by combining the predictions.
+- It can handle multiple features and is generally less prone to overfitting than an individual decision tree.
+5. Why do we divide data into training and testing sets?
+- Training data is used to teach the model.
+- Testing data is used to check the model's performance on unseen data.
+- This helps evaluate how well the model can make predictions.
+Additional questions an external examiner may ask
+Question	Simple answer
+What is AI?	AI means Artificial Intelligence. It enables machines to perform tasks that normally require human intelligence.
+What is supervised learning?	Learning from labelled data.
+What is a decision tree?	A model that makes decisions using a tree-like structure.
+What is a classifier?	A model that assigns data to categories.
+What is Scikit-learn?	A Python library for machine learning.
+What is a feature?	An input variable used for prediction.
+What is a target?	The output class we want to predict.
+What is overfitting?	When a model learns training data too closely and performs poorly on new data.
+What is accuracy?	The percentage of correct predictions.
+What is n_estimators?	The number of decision trees in Random Forest.
+What is train_test_split?	A function that divides data into training and testing sets.
+
+4. Important dataset concepts
+Your CSV file is named genomic_data.csv.
+
+It contains:
+Column	Meaning
+GeneFeature1	First input feature
+GeneFeature2	Second input feature
+Class	Output label (Healthy or Disease)
+
+Remember:
+- X represents input features.
+- y represents target labels.
+- 70% data is used for training.
+- 30% data is used for testing.
+- The model uses 100 decision trees in this practical.
+5. Important Python library names
+Library / Function	Purpose
+Pandas	Read and handle datasets
+Scikit-learn	Machine learning library
+train_test_split	Split training and testing data
+RandomForestClassifier	Create Random Forest model
+fit()	Train the model
+predict()	Predict output classes
+accuracy_score()	Calculate accura
+
+
